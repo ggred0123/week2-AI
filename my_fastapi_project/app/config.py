@@ -1,11 +1,11 @@
+# config.py (git에 포함)
 from pydantic_settings import BaseSettings
-from typing import Optional
 
 class Settings(BaseSettings):
-    APP_NAME: str = "FastAPI App"
-    DEBUG_MODE: bool = False
-    API_VERSION: str = "v1"
-    DATABASE_URL: Optional[str] = None
+    API_V1_STR: str = "/api/v1"
+    PROJECT_NAME: str = "FastAPI Project"
+    DATABASE_URL: str
+    OPENAI_API_KEY: str
 
     class Config:
         env_file = ".env"
